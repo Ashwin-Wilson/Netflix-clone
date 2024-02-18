@@ -1,0 +1,22 @@
+:root{
+    --bg-clr: #111;
+}
+.nav-bar{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height:4rem;
+    background-color: var(--bg-clr);
+}
+.logo{
+    position: fixed;
+    width: 7rem;
+    left: 2rem;
+}
+.avatar{
+    position: fixed;
+    width: 3rem;
+    right: 2rem;
+}

@@ -1,0 +1,19 @@
+.row {
+    width: 100%;
+    height: fit-content;
+    padding: 2rem 2rem;
+}
+
+.posters {
+    margin-top: 2rem;
+    display: flex;
+    overflow-x: scroll;
+}
+.posters::-webkit-scrollbar{
+    display: none;
+}
+
+.posters img {
+    width: 10rem;
+    margin-right: 1rem;
+}
