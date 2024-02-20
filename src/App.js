@@ -10,7 +10,6 @@ function App() {
     <div className="App">
       <Navbar />
       <Banner/>
-    
       <RowPost link={originals} title='Netfilx Orginals' isLarge/>
       <RowPost link={action} title='Action'/>
     </div>

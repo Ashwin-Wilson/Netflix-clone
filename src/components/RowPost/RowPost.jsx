@@ -8,6 +8,13 @@ function RowPost(props) {
   let [movies, setMovies] = useState([])
   let [movieURL, setMovieURL] = useState();
 
+  useEffect(() => {
+    axios.get(props.link).then((response) => {
+      setMovies(response.data.results);
+    }).catch((err) => {
+      alert('Network Error')
+    })
+  },[]);
   const opts = {
     height: '450',
     width: '100%',
@@ -16,14 +23,6 @@ function RowPost(props) {
       autoplay: 1,
     }
   }
-  useEffect(() => {
-    axios.get(props.link).then((response) => {
-      setMovies(response.data.results);
-    }).catch((err) => {
-      alert('Network Error')
-    })
-  },[]);
-
   return (
     <div className='row'>
       <h1>{props.title}</h1>
