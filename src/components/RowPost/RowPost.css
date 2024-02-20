@@ -9,11 +9,22 @@
     display: flex;
     overflow-x: scroll;
 }
-.posters::-webkit-scrollbar{
+
+.posters::-webkit-scrollbar {
     display: none;
 }
 
-.posters img {
-    width: 10rem;
+.posters-small {
+    width: 15rem;
     margin-right: 1rem;
+}
+
+.poster-large {
+    /* height: 4rem; */
+    width: 25rem;
+    margin-right: 1rem;
+}
+.videoViewer{
+    margin-top: 2rem;
+    
 }
