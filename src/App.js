@@ -10,8 +10,9 @@ function App() {
     <div className="App">
       <Navbar />
       <Banner/>
-      <RowPost url={originals} title='Netfilx Orginals' isLarge/>
-      <RowPost url={action} title='Action'/>
+    
+      <RowPost link={originals} title='Netfilx Orginals' isLarge/>
+      <RowPost link={action} title='Action'/>
     </div>
   );
 }

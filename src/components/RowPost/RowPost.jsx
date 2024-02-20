@@ -17,12 +17,11 @@ function RowPost(props) {
     }
   }
   useEffect(() => {
-    axios.get(props.url).then((response) => {
+    axios.get(props.link).then((response) => {
       setMovies(response.data.results);
     }).catch((err) => {
       alert('Network Error')
     })
-
   },[]);
 
   return (
