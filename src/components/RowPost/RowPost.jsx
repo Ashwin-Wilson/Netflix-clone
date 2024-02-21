@@ -6,10 +6,10 @@ import YouTube from 'react-youtube';
 import { API_KEY } from '../../constants/constants';
 
 function RowPost(props) {
-  console.log(props)
+  // console.log(props)
 
   let [movies, setMovies] = useState([])
-  let [movieURL, setMovieURL] = useState({})
+  let [movieURL, setMovieURL] = useState()
 
   useEffect(() => {
     axios.get(props.link).then((response) => {
@@ -40,7 +40,7 @@ function RowPost(props) {
                 if (response.data.results.length !== 0) {
                   setMovieURL(response.data.results[0])
                 } else {
-                  console.log("No data")
+                  alert("Requested movie info not available");
                 }
               }).catch((err) => {
                 alert('video not found')
