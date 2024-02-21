@@ -4,9 +4,12 @@ import axios from '../../axios'
 import { imageUrl } from '../../constants/constants'
 import YouTube from 'react-youtube';
 import { API_KEY } from '../../constants/constants';
+
 function RowPost(props) {
+  console.log(props)
+
   let [movies, setMovies] = useState([])
-  let [movieURL, setMovieURL] = useState();
+  let [movieURL, setMovieURL] = useState({})
 
   useEffect(() => {
     axios.get(props.link).then((response) => {
@@ -14,7 +17,8 @@ function RowPost(props) {
     }).catch((err) => {
       alert('Network Error')
     })
-  },[]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const opts = {
     height: '450',
     width: '100%',
@@ -23,6 +27,7 @@ function RowPost(props) {
       autoplay: 1,
     }
   }
+  // const videoFind = 
   return (
     <div className='row'>
       <h1>{props.title}</h1>
@@ -30,6 +35,7 @@ function RowPost(props) {
         {movies.map((obj) => {
           return (
             <img onClick={() => {
+              // console.log(obj);
               axios.get(`/movie/${obj.id}/videos?api_key=${API_KEY}&language=en-U`).then((response) => {
                 if (response.data.results.length !== 0) {
                   setMovieURL(response.data.results[0])
@@ -40,8 +46,7 @@ function RowPost(props) {
                 alert('video not found')
               })
 
-            }}
-              className={props.isLarge ? 'poster-large' : 'posters-small'} src={`${imageUrl + obj.backdrop_path}`} alt="" />
+            }} className={props.isLarge ? 'poster-large' : 'posters-small'} src={`${imageUrl + obj.backdrop_path}`} alt="" />
           )
         })}
 
